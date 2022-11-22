@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "calendar-bot"
+version = "0.1.0"
+description = ""
+authors = ["Nikuma <ybr811@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiogram = {url = "https://github.com/aiogram/aiogram/archive/refs/tags/v3.0.0-beta.6.zip"}
+sqlalchemy = {extras = ["asyncio"], version = "^1.4.44"}
+asyncpg = "^0.27.0"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^5.0.4"
+black = "^22.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+bot = "app.__main__:main"
